@@ -1,9 +1,9 @@
-package ${basePackage}.acm;
+package com.belly;
 
 import java.util.Scanner;
 
 /**
- * @author ${author!''}
+ * @author ${mainTemplate.author!''}
  * @version 1.1.0
  *
  * ACM 多数之和输入模板

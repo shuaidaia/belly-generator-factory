@@ -8,7 +8,7 @@
   "fileConfig": {
     "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
-    "sourceRootPath": "D:/homework/ideaIU2022.3.2/IdeaProjects/belly-generator/template",
+    "sourceRootPath": "D:/homework/ideaIU2022.3.2/IdeaProjects/belly-generator/belly-generator-factory/src/main/resources/templates/acm-template-pro",
     "type": "dir",
     "files": [
       {
@@ -32,8 +32,8 @@
         ]
       },
       {
-        "inputPath": "src/com/belly/acm/Main.java.ftl",
-        "outputPath": "src/com/belly/acm/Main.java",
+        "inputPath": "acm/Main.java.ftl",
+        "outputPath": "acm/com/belly/Main.java",
         "type": "file",
         "generateType": "dynamic"
       }

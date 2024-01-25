@@ -39,7 +39,7 @@ public class ExecutorGenerator {
         }
 
         //1.拷贝原始文件
-        String copySource = copySource(meta, outputPath);
+        String copySource = copySource(meta, rootPath);
 
         //2.生成代码
         generateCode(meta, outputPath);

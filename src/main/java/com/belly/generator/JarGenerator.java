@@ -35,7 +35,7 @@ public class JarGenerator {
 
         //命令执行结束
         int exit = process.waitFor();
-        System.out.println("命令执行结束，退出" + exit);
+        System.out.println("命令执行结束，退出码：" + exit);
 
     }
 }

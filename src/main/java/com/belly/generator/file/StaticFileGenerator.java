@@ -17,17 +17,17 @@ import java.nio.file.StandardCopyOption;
  */
 public class StaticFileGenerator {
 
-    public static void main(String[] args) {
-        //得到项目根路径
-        String outputPath = System.getProperty("user.dir");
-
-        File parentFile = new File(outputPath).getParentFile();
-        String inputPath = new File(parentFile, "template").getAbsolutePath();
-
-//        System.out.println("outputPath= " + outputPath);
-//        System.out.println("inputPath= " + inputPath);
-        copyFilesByHutool(inputPath, outputPath);
-    }
+//    public static void main(String[] args) {
+//        //得到项目根路径
+//        String outputPath = System.getProperty("user.dir");
+//
+//        File parentFile = new File(outputPath).getParentFile();
+//        String inputPath = new File(parentFile, "template").getAbsolutePath();
+//
+////        System.out.println("outputPath= " + outputPath);
+////        System.out.println("inputPath= " + inputPath);
+//        copyFilesByHutool(inputPath, outputPath);
+//    }
 
     /**
      * 使用胡图工具拷贝文件

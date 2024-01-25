@@ -16,19 +16,7 @@ import java.util.Set;
  */
 public class ScriptGenerator {
     public static void generator(String outputPath, String jarPath){
-
-        //写入Linux脚本文件
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("#!/bin/bash").append("\n");
-        stringBuilder.append(String.format("java -jar %s \"$@\"", jarPath)).append("\n");
-        FileUtil.writeBytes(
-                stringBuilder.toString().getBytes(StandardCharsets.UTF_8), outputPath);
-        try {
-            Set<PosixFilePermission> filePermissionSet = PosixFilePermissions.fromString("rwxrwxrwx");
-            Files.setPosixFilePermissions(Paths.get(outputPath), filePermissionSet);
-        } catch (IOException e) {
-            System.out.println("添加可执行权限失败");
-        }
 
         //写入Window脚本文件
         stringBuilder = new StringBuilder();
@@ -36,5 +24,17 @@ public class ScriptGenerator {
         //%%* 第一个百分号代表转义
         stringBuilder.append(String.format("java -jar %s %%*", jarPath)).append("\n");
         FileUtil.writeBytes(stringBuilder.toString().getBytes(StandardCharsets.UTF_8), outputPath + ".bat");
+
+        //写入Linux脚本文件
+        stringBuilder.append("#!/bin/bash").append("\n");
+        stringBuilder.append(String.format("java -jar %s \"$@\"", jarPath)).append("\n");
+        FileUtil.writeBytes(
+                stringBuilder.toString().getBytes(StandardCharsets.UTF_8), outputPath);
+        try {
+            Set<PosixFilePermission> filePermissionSet = PosixFilePermissions.fromString("rwxrwxrwx");
+            Files.setPosixFilePermissions(Paths.get(outputPath), filePermissionSet);
+        } catch (Exception e) {
+            System.out.println("添加可执行权限失败");
+        }
     }
 }
